@@ -1,0 +1,189 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:310572389247536522",
+      "lastPropertyId": "3:5908348806048990934",
+      "name": "TaskModel",
+      "flags": 2,
+      "properties": [
+        {
+          "id": "1:8418276300408807534",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3849559063703519245",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "3:5908348806048990934",
+          "name": "description",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:5225682617338499382",
+      "lastPropertyId": "3:4255720751674659797",
+      "name": "ImageModel",
+      "flags": 2,
+      "properties": [
+        {
+          "id": "1:3204981667961158106",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1905381739798319961",
+          "name": "imagePath",
+          "type": 9
+        },
+        {
+          "id": "3:4255720751674659797",
+          "name": "isVideo",
+          "type": 1
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:648625342390059944",
+      "lastPropertyId": "3:352049698889079675",
+      "name": "UserModel",
+      "flags": 2,
+      "properties": [
+        {
+          "id": "1:6818119874532904552",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:640931316881839434",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:352049698889079675",
+          "name": "password",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:1813588987888516442",
+      "lastPropertyId": "2:1262117086931370085",
+      "name": "UserIDModel",
+      "flags": 2,
+      "properties": [
+        {
+          "id": "1:6080533263287532581",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1262117086931370085",
+          "name": "userID",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "8:4389773619929022230",
+      "lastPropertyId": "4:287318068416120251",
+      "name": "ChatsModelV2",
+      "flags": 2,
+      "properties": [
+        {
+          "id": "1:1785389456792643430",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3807125820262333020",
+          "name": "receiverID",
+          "type": 9
+        },
+        {
+          "id": "3:7732765994503914247",
+          "name": "senderID",
+          "type": 9
+        },
+        {
+          "id": "4:287318068416120251",
+          "name": "message",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "9:6249889188348131040",
+      "lastPropertyId": "4:839915955374939571",
+      "name": "ChatsModelV3",
+      "flags": 2,
+      "properties": [
+        {
+          "id": "1:4064272164013398949",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1075299431366397129",
+          "name": "receiverID",
+          "type": 9
+        },
+        {
+          "id": "3:9053623488767467387",
+          "name": "senderID",
+          "type": 9
+        },
+        {
+          "id": "4:839915955374939571",
+          "name": "message",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "9:6249889188348131040",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    8759690609503944261,
+    5247314367308841599,
+    6844563363646709142
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    2339120546953142572,
+    8613014349384085462,
+    3982807267790391478,
+    2980781088438940770,
+    291974459289084848,
+    4457131993930890904,
+    5757572835106932480,
+    4215520392607121125,
+    9170134467368116725,
+    8057561309381788280,
+    3746075442724618118
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
