@@ -33,7 +33,7 @@ class ChatPage extends StatelessWidget {
                 chatsModel.senderID, chatsModel.receiverID);
             return Column(
               children: [
-                VerticalSizedBox(height: 30),
+                const VerticalSizedBox(height: 30),
                 CustomText(
                     text: "Anda login sebagai ${controller.myID}" ?? "",
                     fontSize: 16,
@@ -43,7 +43,7 @@ class ChatPage extends StatelessWidget {
                   onTap: () {
                     context.goNamed(SignInChat.signInChatRoute);
                   },
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomText(
@@ -69,11 +69,11 @@ class ChatPage extends StatelessWidget {
                         } else {
                           final chatsModel = snapsot.data;
                           return ListView.builder(
-                            physics: BouncingScrollPhysics(),
+                            physics: const BouncingScrollPhysics(),
                             itemCount: chatsModel?.length,
                             itemBuilder: (BuildContext context, int index) {
                               return Container(
-                                margin: EdgeInsets.only(bottom: 10),
+                                margin: const EdgeInsets.only(bottom: 10),
                                 child: Row(
                                   mainAxisAlignment:
                                       chatsModel?[index].senderID ==
@@ -85,14 +85,14 @@ class ChatPage extends StatelessWidget {
                                             controller.myID
                                         ? Row(
                                             children: [
-                                              Icon(
+                                              const Icon(
                                                 Icons.person,
                                                 size: 30,
                                                 color: ColorApp.grey200,
                                               ),
-                                              HorizontalSizedBox(width: 10),
+                                              const HorizontalSizedBox(width: 10),
                                               Container(
-                                                padding: EdgeInsets.symmetric(
+                                                padding: const EdgeInsets.symmetric(
                                                     horizontal: 6, vertical: 5),
                                                 width: 120,
                                                 decoration: BoxDecoration(
@@ -113,9 +113,9 @@ class ChatPage extends StatelessWidget {
                                           )
                                         : Row(
                                             children: [
-                                              HorizontalSizedBox(width: 10),
+                                              const HorizontalSizedBox(width: 10),
                                               Container(
-                                                padding: EdgeInsets.symmetric(
+                                                padding: const EdgeInsets.symmetric(
                                                     horizontal: 6, vertical: 5),
                                                 width: 120,
                                                 decoration: BoxDecoration(
@@ -132,7 +132,7 @@ class ChatPage extends StatelessWidget {
                                                     fontWeight: FontWeight.bold,
                                                     color: ColorApp.white),
                                               ),
-                                              Icon(
+                                              const Icon(
                                                 Icons.person,
                                                 size: 30,
                                                 color: ColorApp.grey,
@@ -160,7 +160,7 @@ class ChatPage extends StatelessWidget {
                               message: message.text));
                           message.clear();
                         },
-                        icon: Icon(Icons.send))
+                        icon: const Icon(Icons.send))
                   ],
                 )
               ],

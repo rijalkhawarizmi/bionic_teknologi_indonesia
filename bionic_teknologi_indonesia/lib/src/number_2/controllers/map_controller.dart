@@ -2,6 +2,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../../core/utils/permission_handlers.dart';
 
@@ -19,11 +20,10 @@ class MapController extends GetxController {
   }
 
   Future<void> getCurrentLocation() async {
-    // isLoading = true;
     update();
     final permissionGranted =
         await Get.put(PermissionHandler()).requestLocationPermission();
-    isLoading = false;
+
     if (permissionGranted) {
       Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
@@ -33,5 +33,12 @@ class MapController extends GetxController {
     } else {
       isGranted = false;
     }
+  }
+
+  void shareLocation(LatLng latLng) async {
+     update();
+    await Share.share(
+        'https://www.google.com/maps/search/?api=1&query=${latLng?.latitude},${latLng?.longitude}',
+        subject: "Share My Location");
   }
 }

@@ -11,6 +11,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../common/custom_text.dart';
+
 class SignUpChats extends StatelessWidget {
   SignUpChats({super.key});
 
@@ -45,7 +47,22 @@ class SignUpChats extends StatelessWidget {
               text: "Sign Up",
               colorText: ColorApp.white,
               fontSize: 20,
-            )
+            ),
+            Row(children: [ CustomText(
+                  text: 'Apakah anda sudah punya akun?',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  color: ColorApp.grey),
+              InkWell(
+                onTap: (){
+                  context.pushNamed(SignInChat.signInChatRoute);
+                },
+                child: CustomText(
+                    text: 'Masuk sekarang',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    color: ColorApp.purple),
+              )],)
           ],
         ),
       ),

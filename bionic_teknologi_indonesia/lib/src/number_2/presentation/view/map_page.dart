@@ -19,22 +19,28 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: GetBuilder<MapController>(
-           init: MapController(),
-            builder: (MapController controller) => controller.isLoading
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : Center(
-                  child: CustomButton(onPressed: ()async{
-                      
-                      if(controller.isGranted){
-                        await Share.share('https://www.google.com/maps/search/?api=1&query=${controller.latLng?.latitude},${controller.latLng?.longitude}',subject: "Share My Location");
-                      }else{
-                        controller.getCurrentLocation();
-                      }
-                    
-                  }, text: "Share Location",colorText: ColorApp.white,),
-                )));
+      body: GetBuilder<MapController>(
+        init: MapController(),
+        builder: (MapController controller) => controller.isLoading
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : Center(
+                child: CustomButton(
+                  onPressed: () async {
+                    if (controller.isGranted) {
+                      controller.shareLocation(LatLng(
+                          controller.latLng!.latitude,
+                          controller.latLng!.longitude));
+                    } else {
+                      controller.getCurrentLocation();
+                    }
+                  },
+                  text: "Share Location",
+                  colorText: ColorApp.white,
+                ),
+              ),
+      ),
+    );
   }
 }

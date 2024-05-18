@@ -1,15 +1,9 @@
 import 'dart:convert';
-import 'dart:io';
-
-import 'package:bionic_teknologi_indonesia/main.dart';
 import 'package:bionic_teknologi_indonesia/src/number_2/model/task_model.dart';
 import 'package:bionic_teknologi_indonesia/src/number_3/models/chatv3_model.dart';
 import 'package:crypto/crypto.dart';
-import 'package:path_provider/path_provider.dart';
-
 import '../../objectbox.g.dart';
 import '../../src/number_2/model/contact_model.dart';
-import '../../src/number_3/models/chats_model.dart';
 import '../../src/number_3/models/userID_model.dart';
 import '../../src/number_3/models/user_model.dart';
 
@@ -102,8 +96,9 @@ class ObjectBox {
                 ChatsModelV3_.receiverID.equals(userId2)) |
             (ChatsModelV3_.senderID.equals(userId2) &
                 ChatsModelV3_.receiverID.equals(userId1)))
-        .watch(triggerImmediately: true).map((query) => query.find());
-       
+        .watch(triggerImmediately: true)
+        .map((query) => query.find());
+
     return query;
   }
 
@@ -112,8 +107,7 @@ class ObjectBox {
   bool deleteUser(int id) => _userModelBox.remove(id);
 
   void saveUserMyID(UserIDModel user) {
-    
-     _userIDModel.removeAll();
+    _userIDModel.removeAll();
     _userIDModel.put(user);
   }
 
@@ -121,5 +115,4 @@ class ObjectBox {
     final users = _userIDModel.getAll();
     return users.isNotEmpty ? users.first : null;
   }
-
 }

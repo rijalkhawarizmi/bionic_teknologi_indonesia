@@ -85,40 +85,38 @@ class _ListPage2State extends State<ListPage2> {
                         ],
                       ),
                     ),
-                    Expanded(
-                      child: ListView.builder(
-                        physics: ScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: profile.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                thisIndex = index;
-                              });
-                            },
-                            child: Container(
-                                height: 100,
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 15),
-                                margin:
-                                    const EdgeInsets.only(left: 10, bottom: 5),
-                                decoration: BoxDecoration(
-                                    border: Border.all(color: ColorApp.grey),
-                                    color: thisIndex == index
-                                        ? ColorApp.orange
-                                        : ColorApp.purple,
-                                    borderRadius: BorderRadius.circular(2)),
-                                child: Center(
-                                  child: CustomText(
-                                    text:profile[index],
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: ColorApp.white),
-                                ),),
-                          );
-                        },
-                      ),
+                    ListView.builder(
+                      physics: ScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: profile.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              thisIndex = index;
+                            });
+                          },
+                          child: Container(
+                              height: 100,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              margin:
+                                  const EdgeInsets.only(left: 10, bottom: 5),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: ColorApp.grey),
+                                  color: thisIndex == index
+                                      ? ColorApp.orange
+                                      : ColorApp.purple,
+                                  borderRadius: BorderRadius.circular(2)),
+                              child: Center(
+                                child: CustomText(
+                                  text:profile[index],
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: ColorApp.white),
+                              ),),
+                        );
+                      },
                     ),
                   ],
                 )),

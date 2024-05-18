@@ -78,7 +78,7 @@ class ListPage extends StatelessWidget {
                                             fontWeight: FontWeight.w600,
                                           ),
                                           CustomText(
-                                            text: "Description number $index",
+                                            text: "Description  $index",
                                             color: ColorApp.black,
                                             fontSize: 15,
                                             fontWeight: FontWeight.w300,
