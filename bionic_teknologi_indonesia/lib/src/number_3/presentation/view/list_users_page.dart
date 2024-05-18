@@ -12,23 +12,11 @@ import '../../controllers/chats_controller.dart';
 import '../../models/chatv3_model.dart';
 import 'sign_in_chat.dart';
 
-class ListUsersPage extends StatefulWidget {
-  const ListUsersPage({super.key});
+class ListUsersPage extends StatelessWidget {
   static const String listUsersRoute = "listusers-route";
 
-  @override
-  State<ListUsersPage> createState() => _ListUsersPageState();
-}
-
-class _ListUsersPageState extends State<ListUsersPage> {
   final name = TextEditingController();
   final phone = TextEditingController();
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,29 +36,29 @@ class _ListUsersPageState extends State<ListUsersPage> {
               child: Column(
                 children: [
                   CustomText(
-                    text: "Anda login sebagai ${controller.myID}" ?? "",
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: ColorApp.black),
-                   InkWell(
-                  onTap: () {
-                    context.goNamed(SignInChat.signInChatRoute);
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomText(
-                          text: "Keluar" ?? "",
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: ColorApp.red),
-                      Icon(
-                        Icons.logout,
-                        color: ColorApp.red,
-                      )
-                    ],
+                      text: "Anda login sebagai ${controller.myID}" ?? "",
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: ColorApp.black),
+                  InkWell(
+                    onTap: () {
+                      context.goNamed(SignInChat.signInChatRoute);
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomText(
+                            text: "Keluar" ?? "",
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: ColorApp.red),
+                        Icon(
+                          Icons.logout,
+                          color: ColorApp.red,
+                        )
+                      ],
+                    ),
                   ),
-                   ),
                   VerticalSizedBox(height: 30),
                   Expanded(
                     child: StreamBuilder(

@@ -36,7 +36,7 @@ class _ListPage2State extends State<ListPage2> {
                   .size
                   .width, // Adjust the width as needed
               height: 150, // Adjust the height as needed
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Color(0xFFFF5722), Color(0xFFFF9800)],
                   begin: Alignment.topLeft,
@@ -57,8 +57,8 @@ class _ListPage2State extends State<ListPage2> {
                       decoration: BoxDecoration(
                           border: Border.all(color: ColorApp.grey),
                           color: ColorApp.orange,
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(29),topRight: Radius.circular(20))),
-                      child: Row(
+                          borderRadius: const BorderRadius.only(topLeft: Radius.circular(29),topRight: Radius.circular(20))),
+                      child: const Row(
                         children: [
                           Icon(
                             Icons.person,
@@ -86,7 +86,7 @@ class _ListPage2State extends State<ListPage2> {
                       ),
                     ),
                     ListView.builder(
-                      physics: ScrollPhysics(),
+                      physics: const ScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: profile.length,
                       itemBuilder: (BuildContext context, int index) {
@@ -180,11 +180,11 @@ class _ListPage2State extends State<ListPage2> {
             borderRadius: BorderRadius.circular(2)),
         child: Row(
           children: [
-            Icon(
+            const Icon(
               Icons.person,
               size: 50,
             ),
-            HorizontalSizedBox(width: 10),
+            const HorizontalSizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -194,7 +194,7 @@ class _ListPage2State extends State<ListPage2> {
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: ColorApp.white),
-                CustomText(
+                const CustomText(
                     text: "Lorem Ipsum",
                     fontSize: 20,
                     fontWeight: FontWeight.w300,

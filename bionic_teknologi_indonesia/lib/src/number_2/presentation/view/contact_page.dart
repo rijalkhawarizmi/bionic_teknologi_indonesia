@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../core/utils/constant.dart';
+
 class ContactPage extends StatefulWidget {
 
   static const String contactRoute="contact-route";
@@ -23,8 +25,7 @@ class _ContactPageState extends State<ContactPage> {
     _getContacts();
   }
 
-  final String contactsUrl = 'content://contacts/people/';
-
+  
   Future<void> _openContacts() async {
     if (await canLaunch(contactsUrl)) {
       await launch(contactsUrl);
@@ -58,13 +59,13 @@ class _ContactPageState extends State<ContactPage> {
         onPressed: () {
           _openContacts();
         },
-        child: CustomText(text: "Add", fontSize: 15, fontWeight: FontWeight.bold, color: ColorApp.black)
+        child: const CustomText(text: "Add", fontSize: 15, fontWeight: FontWeight.bold, color: ColorApp.black)
       ),
       appBar: AppBar(
-        title: CustomText(text: "Contact list", fontSize: 20, fontWeight: FontWeight.bold, color: ColorApp.black)
+        title: const CustomText(text: "Contact list", fontSize: 20, fontWeight: FontWeight.bold, color: ColorApp.black)
       ),
       body: _contacts.isEmpty
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: _contacts.length,
               itemBuilder: (context, index) {

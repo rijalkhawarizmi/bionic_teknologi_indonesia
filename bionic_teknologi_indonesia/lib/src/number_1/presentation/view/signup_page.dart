@@ -31,7 +31,7 @@ class SignUp extends StatelessWidget {
             child: Container(
               width:  MediaQuery.of(context).size.width, // Adjust the width as needed
               height: 150, // Adjust the height as needed
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Color(0xFFFF5722), Color(0xFFFF9800)],
                   begin: Alignment.topLeft,
@@ -40,9 +40,9 @@ class SignUp extends StatelessWidget {
               ),
             ),
             ),
-              VerticalSizedBox(height: 100),
+              const VerticalSizedBox(height: 100),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(children: [
                   Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +67,7 @@ class SignUp extends StatelessWidget {
                   )
                 ],
               ),
-              VerticalSizedBox(height: 100),
+              const VerticalSizedBox(height: 100),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: Row(
@@ -107,13 +107,13 @@ class SignUp extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
-              VerticalSizedBox(height: 70),
-              CustomText(
+              const VerticalSizedBox(height: 70),
+              const CustomText(
                   text: 'Apakah anda sudah punya akun?',
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                   color: ColorApp.grey),
-              CustomText(
+              const CustomText(
                   text: 'Masuk sekarang',
                   fontSize: 14,
                   fontWeight: FontWeight.w700,

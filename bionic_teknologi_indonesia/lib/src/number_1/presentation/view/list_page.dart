@@ -27,7 +27,7 @@ class ListPage extends StatelessWidget {
             child: Container(
               width:  MediaQuery.of(context).size.width, // Adjust the width as needed
               height: 150, // Adjust the height as needed
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Color(0xFFFF5722), Color(0xFFFF9800)],
                   begin: Alignment.topLeft,
@@ -41,8 +41,8 @@ class ListPage extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
-                  VerticalSizedBox(height: 60),
-                  CustomText(
+                  const VerticalSizedBox(height: 60),
+                  const CustomText(
                       text: "Daftar Catatan",
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

@@ -28,13 +28,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   Widget _indicator(bool isActive) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 150),
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      duration: const Duration(milliseconds: 150),
+      margin: const EdgeInsets.symmetric(horizontal: 8.0),
       height: 15.0,
       width: isActive ? 16.0 : 16.0,
       decoration: BoxDecoration(
           color: isActive == true ? ColorApp.white : ColorApp.grey,
-          borderRadius: BorderRadius.all(Radius.circular(50.0))),
+          borderRadius: const BorderRadius.all(Radius.circular(50.0))),
     );
   }
 
@@ -49,9 +49,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
                 color: ColorApp.white),
-            VerticalSizedBox(height: 70),
+            const VerticalSizedBox(height: 70),
             Center(child: Image.network(images!,width: 300,)),
-            VerticalSizedBox(height: 30),
+            const VerticalSizedBox(height: 30),
             Column(
               children: <Widget>[
                 CustomText(
@@ -73,19 +73,19 @@ class _OnboardingPageState extends State<OnboardingPage> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.top]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+      value: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
       child: Scaffold(
         body: Container(
             color: ColorApp.purple,
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.0),
+              padding: const EdgeInsets.symmetric(vertical: 40.0),
               child: Column(
                 children: <Widget>[
-                  VerticalSizedBox(height: 30),
-                  Container(
+                  const VerticalSizedBox(height: 30),
+                  SizedBox(
                     height: 500.0,
                     child: PageView(
-                      physics: ClampingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       controller: _pageController,
                       onPageChanged: (int page) {
                         setState(() {
@@ -116,7 +116,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   _currentPages == _numPages - 1
                       ? Container(
-                          margin: EdgeInsets.symmetric(horizontal: 100),
+                          margin: const EdgeInsets.symmetric(horizontal: 100),
                           child: CustomButton(
                             borderRadius: 50,
                             color: ColorApp.white,
@@ -128,8 +128,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         )
-                      : Text(''),
-                  VerticalSizedBox(height: 10),
+                      : const Text(''),
+                  const VerticalSizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: _buildPageIndicator(),

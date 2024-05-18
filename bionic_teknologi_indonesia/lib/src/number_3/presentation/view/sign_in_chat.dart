@@ -1,6 +1,7 @@
 import 'package:bionic_teknologi_indonesia/common/custom_button.dart';
 import 'package:bionic_teknologi_indonesia/common/custom_textfield.dart';
 import 'package:bionic_teknologi_indonesia/core/style/color_app.dart';
+import 'package:bionic_teknologi_indonesia/core/style/sized_box.dart';
 import 'package:bionic_teknologi_indonesia/src/number_3/controllers/chats_controller.dart';
 import 'package:bionic_teknologi_indonesia/src/number_3/models/userID_model.dart';
 import 'package:bionic_teknologi_indonesia/src/number_3/models/user_model.dart';
@@ -48,7 +49,8 @@ class SignInChat extends StatelessWidget {
               colorText: ColorApp.white,
               fontSize: 20,
             ),
-            Row(children: [ CustomText(
+            const VerticalSizedBox(height: 20),
+            Row(children: [ const CustomText(
                   text: 'Apakah anda belum punya akun?',
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
@@ -57,7 +59,7 @@ class SignInChat extends StatelessWidget {
                 onTap: (){
                   context.pushNamed(SignUpChats.signUpChatRoute);
                 },
-                child: CustomText(
+                child: const CustomText(
                     text: 'Buat sekarang',
                     fontSize: 14,
                     fontWeight: FontWeight.w700,

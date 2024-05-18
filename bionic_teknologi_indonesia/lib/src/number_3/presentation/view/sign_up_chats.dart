@@ -12,6 +12,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../common/custom_text.dart';
+import '../../../../core/style/sized_box.dart';
 
 class SignUpChats extends StatelessWidget {
   SignUpChats({super.key});
@@ -33,10 +34,13 @@ class SignUpChats extends StatelessWidget {
             CustomTextField(controller: password, hintText: "Password"),
             CustomButton(
               onPressed: () async {
-                final bool result =
-                    await controller.signUp(name.text.toLowerCase().trim(), password.text.toLowerCase().trim());
-                if (name.text.isEmpty ||  password.text.isEmpty) {
-                  Fluttertoast.showToast(msg: "Nama atau password harus diisi",backgroundColor: ColorApp.red);
+                final bool result = await controller.signUp(
+                    name.text.toLowerCase().trim(),
+                    password.text.toLowerCase().trim());
+                if (name.text.isEmpty || password.text.isEmpty) {
+                  Fluttertoast.showToast(
+                      msg: "Nama atau password harus diisi",
+                      backgroundColor: ColorApp.red);
                 } else if (result) {
                   controller.getMyID();
                   context.goNamed(SignInChat.signInChatRoute);
@@ -48,21 +52,26 @@ class SignUpChats extends StatelessWidget {
               colorText: ColorApp.white,
               fontSize: 20,
             ),
-            Row(children: [ CustomText(
-                  text: 'Apakah anda sudah punya akun?',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                  color: ColorApp.grey),
-              InkWell(
-                onTap: (){
-                  context.pushNamed(SignInChat.signInChatRoute);
-                },
-                child: CustomText(
-                    text: 'Masuk sekarang',
+            const VerticalSizedBox(height: 20),
+            Row(
+              children: [
+                const CustomText(
+                    text: 'Apakah anda sudah punya akun?',
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
-                    color: ColorApp.purple),
-              )],)
+                    color: ColorApp.grey),
+                InkWell(
+                  onTap: () {
+                    context.pushNamed(SignInChat.signInChatRoute);
+                  },
+                  child: const CustomText(
+                      text: 'Masuk sekarang',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: ColorApp.purple),
+                )
+              ],
+            )
           ],
         ),
       ),

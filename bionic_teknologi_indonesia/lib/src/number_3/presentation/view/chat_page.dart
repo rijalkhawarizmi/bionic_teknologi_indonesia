@@ -47,7 +47,7 @@ class ChatPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomText(
-                          text: "Keluar" ?? "",
+                          text: "Keluar",
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: ColorApp.red),
